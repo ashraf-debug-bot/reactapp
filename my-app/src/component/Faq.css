@@ -1,0 +1,120 @@
+
+  .accordion button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    padding-right: 20px;
+    color: var(--text);
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  .accordion-item{
+    border: none;
+  }
+  .top{
+    padding: 50px;
+    background-color: #f6f9fd;
+  }
+  .accordion button:hover,
+  .accordion button:focus {
+    cursor: pointer;
+    color: var(--blue);
+  }
+  
+  .accordion button:hover::after,
+  .accordion button:focus::after {
+    cursor: pointer;
+    color: var(--blue);
+
+  }
+  
+  .accordion .accordion-title {
+    padding: 1em 1.5em 1em 0;
+  }
+  
+  .accordion .icon {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+  }
+  
+  .accordion .icon::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+  }
+  
+  .accordion .icon::after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+  }
+  
+  .accordion button[aria-expanded='true'] {
+    color: var(--blue);
+  }
+  
+  .accordion button[aria-expanded='true'] .icon::after {
+    width: 0;
+  }
+  
+  .accordion button[aria-expanded='true'] + .accordion-content {
+    opacity: 1;
+    max-height: 9em;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+  }
+  
+  .accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+  }
+  
+  .accordion .accordion-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 2em 0;
+    width: 50%;
+    margin: auto;
+  }
+  .accordion .icon {
+    border: 1px solid; /* Set border */
+    border-radius: 22px;
+    border-width: 1px; /* Reduce the border width */
+  }
+  
+  .accordion .icon::before,
+  .accordion .icon::after {
+    border-width: 1px; /* Reduce the border width */
+  }
+  
+  /* Responsive Styles */
+  @media only screen and (max-width: 768px) {
+    .container {
+      padding: 1rem; /* Further reduced padding for smaller screens */
+    }
+  }
